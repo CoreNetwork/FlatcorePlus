@@ -1,0 +1,682 @@
+Enabled: true
+Aliases:
+- match:
+  - /me
+  - /action
+  - /dicks
+  - /pong
+  comment: Commands left to die() silently :)
+- match:
+  - /level( .*)?
+  - /point( .*)?
+  message: '&6Did you mean &7/points?'
+- match:
+  - /wbooks( .*)?
+  - /wbook( .*)?
+  - /wbr( .*)?
+  message: '&6We don''t have that feature here. Try &7/help'
+  comment: WelcomeBook / WelcomeBookRecoded
+- match: /spawn( .*)?
+  message: '&6We don''t have a usual spawn here. See &7/help Respawn'
+- match: /hub( .*)?
+  message: '&6No such thing exists here. See &7/help Respawn'
+- match: /cprivate( .*)?
+  message: '&6To protect chests, make sure they are in your claim. &7/help Claims'
+- match: /cpublic( .*)?
+  message: '&6To share all chests in your claim, type &7/containertrust <player>.
+    &6To share just a few of them, learn about &7/help Subclaims'
+- match:
+  - /shop( .*)?
+  - /bal( .*)?
+  - /money( .*)?
+  message: '&6There is no server-wide economy. Trade with players or villagers.'
+- match:
+  - /escape( .*)?
+  - /stuck( .*)?
+  message: '&6Did you mean &7/trapped&6?'
+- match: /trapped
+  route: /core trapped
+- match: /ma( .*)?
+  message: '&6Try Death Pit in Limbo for a similar mini-game. &7/help Limbo'
+- match: /lobby( .*)?
+  message: '&6To revisit tutorial, click the button near respawn crystal.'
+- match: /servers?( .*)?
+  message: '&6We have just one server here.'
+- match: /ping( .*)?
+  message: '&6Pinging was disabled due to its unreliability.'
+- match: '/[a-zA-Z0-9_]+\:([a-zA-Z0-9_]+)\s?(.*)'
+  forward: /$1 $2
+- match: /\?\s?(.*)
+  forward: /help $1
+- match: /cp
+  route: /checkpoint
+- match:
+  - /modreq( .*)?
+  - /ticket( .*)?
+  - /request( .*)?
+  message: '&6Did you mean &7/ask&6?'
+- match: /ask( .*)?
+  route: /modreq $1
+- match: /status
+  route: /ch status
+- match: /ch done (.+)
+  message: '&cThis doesn''t work anymore. Send &7/ch done &cmultiple times.'
+- match: /canregen
+  message: '&cThis doesn''t work anymore, sorry.'
+  sudo: true
+- match: /unlisten (.+)
+  message: '&6To stop listening to a channel, just send &7/listen $1 &6again.'
+- match: /clisten (.+)
+  message: '&6Did you mean &7/listen&6?'
+- match: /untrack
+  route: /mantle untrack
+- match: /animals\s?(.*)
+  route: /ml animals $1
+- match: /villagers\s?(.*)
+  route: /ml villagers $1
+- match: /abandon( .*)?
+  message: '&6Did you mean &7/abandonclaim &6or &7/abandonallclaims&6?'
+- match: /staff( .*)?
+  message:
+  - '&7If you need help, see if we''re online: /list... or use /ask'
+  - '&bGuardians: &7hannahbanana, harflin, Leonheart515, Mimal, ridddle, SkeletonCakes, Tbzz'
+  - '&6Developers: &7Ginaw, matejdro, narrowtux'
+  - ''
+- match: /afk( .*)?
+  message: '&7You can be AFK for 1h. No command needed.'
+- match: /tp[a|o]( .*)?
+  message: '&cThere is no teleportation on Flatcore.'
+- match: /sethome( .*)?
+  message: '&cYou cannot set home on Flatcore. Beds don''t work either.'
+- match: /home( .*)?
+  message: '&cNo /home on Flatcore. If you have a base, use /claims.'
+- match: /base( .*)?
+  route: /core claimslist
+- match: /claims?list( .*)?
+  message: '&6Did you mean: &7/claims &6or &7/blocks'
+- match: /claims
+  route: /core claimslist
+- match: /claims\s?(.*)
+  route: /claimslist $1
+- match: /ignoreclaims
+  route: /core ignoreclaims
+- match: /respectclaims
+  route: /core respectclaims
+- match: //j
+  route: /jumpto
+- match: //as
+  route: /ascend
+- match: //ds
+  route: /descend
+- match: //us
+  route: /unstuck
+- match: //th
+  route: /thru
+- match: //d
+  route: //desel
+- match: //ex( .*)?
+  route: //expand $1
+- match: //c( .*)?
+  route: //contract $1
+- match: //sh( .*)?
+  route: //shift $1
+- match: //mv( .*)?
+  route: //move $1
+- match: //cp( .*)?
+  route: //copy $1
+- match: //p( .*)?
+  route: //paste $1
+- match: //u( .*)?
+  route: //undo $1
+- match: //r( .*)?
+  route: //replace $1
+- match: //rn( .*)?
+  route: //replacenear $1
+- match: //rot( .*)?
+  route: //rotate $1
+- match: //save( .*)?
+  route: //schematic save $1
+- match: //load( .*)?
+  route: //schematic load $1
+- match: /abandonclaim( .*)?
+  route: /core abandonclaim
+- match: /abandonallclaims( .*)?
+  route: /core abandonallclaims
+- match: /deleteclaim( .*)?
+  route: /core deleteclaim
+- match: /tp-id\s?(.*)
+  route: /tp-id $1
+- match: /tps
+  route: /tps
+- match: /tp\s?(.*)
+  route: /core tp $1
+- match: /effect\s?(.*)
+  route: /core effect $1
+- match: /enchant\s?(.*)
+  route: /core enchant $1
+- match: /remind\s?(.*)
+  route: /core remind $1
+- match: /info\s?(.*)
+  route: /core info $1
+- match: /unstuck
+  route: /core unstuck
+- match: /rules
+  message:
+  - ''
+  - '&7-- &fBy playing Flatcore you agree to the following rules &7---'
+  - '&7-- Detailed descriptions: /rule &8[&7number&8]'
+  - ''
+  - '&31. You must agree and follow our community guidelines:'
+  - ' &3 &3 &3 [[ &bhttp://www.core-network.us/conduct/ &3]]'
+  - '&72. We don''t spawn items, teleport or hold your hand. Survive.'
+  - '&33. No hacking, no exploiting, no item duplicating.'
+  - '&74. If it''s not protected, it can be taken. Claim your stuff!'
+  - '&35. If you go into someone''s base and you die, it''s your fault.'
+  - '&76. Don''t claim too close to other players without asking.'
+  - '&37. You cannot use alt accounts except when recording video.'
+  - ''
+- match: /rule 1
+  message:
+  - ''
+  - '&7-- &fRule #1 &7--------'
+  - '&7-- &fYou must agree and follow our community guidelines'
+  - ''
+  - '&fa.&7 Public chat is English-only. Use private channels for other languages or friendly slang.'
+  - '&fb.&7 Don''t spam or repeat yourself without cause.'
+  - '&fc.&7 Don''t have fun at the expense of others.'
+  - '&fd.&7 Some profanity is okay. We''re mature folks and profanity isn''t taboo when used intelligently.'
+  - '&fe.&7 Hate speech, abuse, and rude behavior is never ok. Don''t attack people, use slurs, racism, or sexism'
+  - '&ff.&7 You are responsible for your account. Alcohol or drugs can''t be used as an excuse.'
+  - '&fg.&7 Listen to staff. We have a responsibility to maintain an open and welcoming community.'
+  - ''
+  - '&fVisit http://www.core-network.us/conduct/ &7to read full version of our community guidelines.'
+  - ''
+- match: /rule 2
+  message:
+  - ''
+  - '&7-- &fRule #2 &7--------'
+  - '&7-- &fWe don''t spawn items, teleport or hold your hand. Survive.'
+  - ''
+  - '&7This is a Player vs Environment server. You are expected to survive on your own. Staff''s job isn''t to look after you. You have to travel, fight monsters, get items and figure out the game on your own. You can ask for any amount of information but moderators won''t make the game easier for you.'
+  - ''
+  - '&7We provided all players with lots of information about the game, check &f/help &7and &f/faq &7or visit our website:'
+  - '&7http://www.core-network.us'
+  - ''
+- match: /rule 3
+  message:
+  - ''
+  - '&7-- &fRule #3 &7--------'
+  - '&7-- &fNo hacking, no exploiting, no item duplicating.'
+  - ''
+  - '&7You cannot try to use any software to exploit the server or try to bypass normal survival rules. This includes but is not limited to: flight, illegal movement, unrealistic block breaking / placing, kill aura, reach hacks, chat and packet spam. You can enhance your interface with mini-maps, waypoints, inventory sorting and other things described in &f/help Mods&7. You are not allowed to duplicate items even if it''s possible in current version of Minecraft (exception: farming portals for obsidian).'
+  - ''
+  - '&7Report all bugs and exploits you encounter in private - you will never be punished for responsible disclosure. Hiding the existence of bugs and using them to your advantage is not okay and will cause you trouble.'
+  - ''
+- match: /rule 4
+  message:
+  - ''
+  - '&7-- &fRule #4 &7--------'
+  - '&7-- &fIf it''s not protected, it can be taken. Claim your stuff!'
+  - ''
+  - '&7We have an easy to use player claim system which is explained to everyone joining the server: &f/help Claims&7. If you don''t protect your chests and buildings with it, anyone else is allowed to steal or grief you.'
+  - ''
+  - '&7The same goes for giving people access - if a player you trusted steals or griefs you, staff will not intervene. Give trust accordingly. You can also subdivide your claim to give precise access: &f/help Subclaims'
+  - ''
+- match: /rule 5
+  message:
+  - ''
+  - '&7-- &fRule #5 &7--------'
+  - '&7-- &fIf you go into someone''s base and you die, it''s your fault.'
+  - ''
+  - '&7PvP is disabled globally but you are still in danger from monsters or environment (lava, falling gravel, etc). If you go into another player''s base, be aware that it may have things that kill you inside. Staff is not responsible for deaths at the hands of traps, delibrate or not. When in doubt, walk away.'
+  - ''
+  - '&7If you are legitimately stuck, use &f/trapped &7which will release you from player''s claim.'
+  - ''
+- match: /rule 6
+  message:
+  - ''
+  - '&7-- &fRule #6 &7--------'
+  - '&7-- &fDon''t claim too close to other players without asking.'
+  - ''
+  - '&7People on Flatcore like their personal space. Because of animal and villager systems: &f/help Limits&7, the &fsafe distance to settle without asking is view distance&7: if you can''t see other player''s base, it''s OK to start building. If you''re interested in becoming a close neighbor, always ask permission beforehand. Should you feel someone is too close, politely ask them to relocate or request staff''s help via &f/ask.'
+  - ''
+  - '&7On top of that, deciding to not claim a village to use its regenerating properties indefinitely doesn''t stop anyone from claiming it. If you want to own a village, claim it or staff &omight not &r&7help you with your new neighbor.'
+  - ''
+- match: /rule 7
+  message:
+  - ''
+  - '&7-- &fRule #7 &7--------'
+  - '&7-- &fYou cannot use alt accounts except when recording video.'
+  - ''
+  - '&7To prevent the abuse of our claim system, per-player looting system and the one-hour Limbo penalty, we do not allow alt accounts. The only exception to this rule is to record yourself playing for a video (LP, stream, etc). You may not use another account as your Limbo account.'
+  - ''
+- match: /help
+  message:
+  - ''
+  - '&cIf you need staff help, use &7/ask'
+  - ''
+  - '&b/help &fChallenges &8-&7 About weekly challenges.'
+  - '&b/help &fChat &8-&7 Chat commands you should know.'
+  - '&b/help &fClaims &8-&7 How to protect your land.'
+  - '&b/help &fLimits &8-&7 Animal, villager & other mob limits.'
+  - '&b/help &fLoot &8-&7 Where and how to get loot.'
+  - '&b/help &fRanks &8-&7 Player ranks and how to rank up.'
+  - '&b/help &fSpawning &8-&7 Altered mob spawning mechanics.'
+  - '&6/help &eSubscribe &8-&6 Support us and get cool perks.'
+  - '&8 ----'
+  - '&b/help &fMore &8-&7 Display detailed help topics.'
+  - ''
+- match: /help More
+  message:
+  - ''
+  - '&b/help &fBlocks &8-&7 How to get more claim blocks.'
+  - '&b/help &fDehydration &8-&7 A survival mechanic in Nether.'
+  - '&b/help &fMods &8-&7 List of allowed client-side mods.'
+  - '&b/help &fRespawn &8-&7 Explanation for random spawn.'
+  - '&b/help &fSubclaims &8-&7 How to make claim subdivisions.'
+  - '&b/help &fSpells &8-&7 One-off commands in magic form.'
+  - '&b/help &fStretchGoal &8-&7 Want more challenges? Read!'
+  - '&6/help &eMonsterHunt &8-&6 Monster slaying event.'
+  - '&6/help &eTreasureChase &8-&6 Spell finding event.'
+  - ''
+  - '&7You can also try &f/faq &7for more info'
+  - '&8 ----'
+- match: /help Blocks
+  message:
+  - ''
+  - '&7-- &fHelp: More Claim Blocks &7--------'
+  - '&7You can get more claim blocks (/blocks) by:'
+  - ''
+  - '&f1.&7 Playing the game. You get 180 blocks per hour.'
+  - '&f2.&7 Ranking up. Every rank has a bonus and as &f/ranks&7 shows, doing first level of any challenge can rank you up to Flatcorian: 1000 more blocks.'
+  - '&f3.&7 Buying claim blocks with items in your inventory. &f/blocks buy'
+  - '&f4.&7 Posting quality stuff to our subreddit. &fhttp://redd.it/1vuj5j &7 (250 blocks).'
+  - '&7------------'
+- match: /help Challenges
+  message:
+  - ''
+  - '&7-- &fHelp: Weekly Challenges &7------------'
+  - '&7Weekly challenges is the main way to rank up. To see current week''s challenge, type &b/ch&7. Challenges are updated every Sunday.'
+  - ''
+  - '&7Challenges have mutliple difficulty levels – even if you just started, you probably can complete 1st or 2nd.'
+  - ''
+  - '&7When you''ve met level''s requirements, stand near required items or buildings and type: &b/ch done&7 to notify staff. Moderators will inspect the entry & lock challenge''s items until the week is over to prevent swapping / cheating.'
+  - ''
+  - '&7Points for challenges increase your rank: &b/help Ranks'
+- match: /help Chat
+  message:
+  - ''
+  - '&7-- &fHelp: Chat and Chat Commands &7------------'
+  - '&b/c &8[&fchannel&8] -&7 make/join a channel'
+  - '&b/listen &8[&fchannel&8] -&7 listen to another channel'
+  - '&b/f &8-&7 return to global chat: &f<&7F&f>&7'
+  - '&b/f &8[&fmessage&8] -&7 send message to &f<&7F&f>&7 from other channel'
+  - '&b/msg &8[&fplayer&8] [&fmessage&8] &8-&7 send a private message'
+  - '&b/r &8[&fmessage&8] -&7 reply to last player'
+  - '&b/mute &8[&fplayer&8] -&7 mute/unmute a player'
+  - '&b/list &8-&7 list all players on the server'
+  - '&7------------'
+- match: /help Claims
+  message:
+  - ''
+  - '&7-- &fHelp: Claims and Land Protection &7----'
+  - '&7You have to protect land to prevent it from being griefed, your items stolen or your animals killed. Use this visual tutorial to learn basics: &fhttp://imgur.com/a/IZn9E'
+  - ''
+  - '&b/abandonclaim &8-&7 Deletes a claim you''re standing in.'
+  - '&b/abandonallclaims &8-&7 Deletes ALL your claims.'
+  - '&b/blocks &8-&7 Shows your claim blocks.'
+  - '&b/claims &8-&7 Shows your claims and claim limits.'
+  - '&b/trapped &8-&7 Ejects you to nearby unclaimed land.'
+  - '&b/givepet &8[&fplayer&8] &8-&7 Gift your horse to another player.'
+  - ''
+  - '&b/trust &8[&fplayer&8] &8-&7 Breaking and placing blocks, full access.'
+  - '&b/containertrust &8[&fplayer&8] &8-&7 Access to chests.'
+  - '&b/accesstrust &8[&fplayer&8] &8-&7 Access to doors and buttons.'
+  - '&b/permissiontrust &8[&fplayer&8] &8-&7 Empower a player to grant access.'
+  - '&b/untrust &8[&fplayer&8] &8-&7 Revoke player access.'
+  - '&b/trustlist &8-&7 List all permissions for a claim.'
+  - ''
+  - '&7Stand outside a claim to change all your claims. Use &fall &7instead of &fplayer &7to allow the public.'
+  - '&7------------'
+- match: /help Limits
+  message:
+  - ''
+  - '&7-- &fHelp: Mob Limits &7--------'
+  - '&7In order to not kill the server with tens of thousands of mobs, there are limits to how many animals, villagers, golems and monsters you can have in your base or grinders. They are reasonable and allow prosperity:'
+  - '&7'
+  - '&f1.&7 You cannot have more than 150 animals and 90 villagers (and 32 golems) in your view distance. To create bigger farms, move your mobs into multiple 272x272 areas. Count mobs with &f/animals &7and &f/villagers'
+  - '&f2.&7 Squid are not limited in any way. (/faq Squid)'
+  - ''
+  - '&7To learn about monster spawning, &f/help Spawning&7. Animals, villagers, golems and squid spawn under normal conditions.'
+  - '&7------------'
+- match: /limits
+  forward: /help Limits
+- match: /help Loot
+  message:
+  - ''
+  - '&7-- &fHelp: Loot &7------'
+  - '&7Every village contains &ftwo blacksmiths &7with &funique loot per player &7in chests which restock upon village regeneration. Looting a chest will generate at least one basic set, plus a chance for a rare set. A &fcompass &7can direct you to any category (if it''s been progressively unlocked). Every chest you loot with a rare set counts toward its &fcap&7. Once you cap out every set, only basic sets will generate.'
+  - ''
+  - '&7The second loot system is located in the Nether. There are two types of dungeons (Nether Palace and Nether Catacombs) you can visit and one decorative Nether Altar. Those structures are admin claimed and heavily guarded. Bring your best gear to try to get best loot in game in many chests. Those chests can be looted only once.'
+  - ''
+  - 'In depth info: &fhttp://www.core-network.us/flatcore/loot'
+  - ''
+  - '&7------------'
+- match: /help Mods
+  message:
+  - ''
+  - '&7-- &fHelp: Minecraft Mods &7------'
+  - '&7You can use any mod that doesn''t send invalid data to the server or tries to exploit the server in any way. This means that any interface mod is allowed (waypoints, mapping, inventory tweaks, brightness and so forth) - we think that changing interface (pixels on the screen, sounds and keyboard/mouse input) is like installing a Chrome extension, you do it because you want your software to work better.'
+  - '&7However, we do not allow mods which change the data and try to do things which are not possible according to the server software. No flying, no fast-placing, no smart movement.'
+  - '&7Gray area: x-ray (Nether) and entity detectors. We think they make your game easier and it will make you quit sooner. For your own sake, don''t use them.'
+  - '&7------------'
+- match: /help Subclaims
+  message:
+  - ''
+  - '&7-- &fHelp: Claim Subdivisions &7----'
+  - '&7Claims can be subdivided into smaller areas which then can get more granular permissions. This can allow you to share your enchanting table with everyone without fear of anyone breaking it, for example.'
+  - ''
+  - '&7To start, stand in your claim, grab a bone in your hand and type &f/subdivideclaims&7. Select two corners like you normally would – it will mark the subarea with wool/iron blocks. Subdivisions can be as small as 1x1. To apply permissions, stand in your subarea and pick appropriate command from &f/help Claims&7. To delete subdivision, stand in it and type &f/abandonclaim&7 - unfortunately it will remove liquids as well (it''s a bug).'
+  - ''
+  - '&cImportant:&7 you cannot grant build rights in your parent claim and take it away in subdivision. Plan your trust levels accordingly.'
+  - '&7------------'
+- match: /help TreasureChase
+  message:
+  - ''
+  - '&7-- &fHelp: Treasure Chase &7------'
+  - '&7Treasure Chase is a fun event during which players are trying to reach crates with spells and fireworks. There are three waves and each one drops the crate further and further, requiring the player to travel faster.'
+  - ''
+  - '&7The event is accessible to everyone currently on the server and you will get a notification in chat when it''s about to happen. &fChase always starts with a brand new day&7 - it''s relatively safe but you can still lose all items if you die!'
+  - ''
+  - '&6You can purchase Treasure Chase passes in our store:'
+  - '&ehttp://store.core-network.us'
+  - ''
+  - '&7Sponsor commands: &f/chase run &7and &f/chase check'
+  - '&7Participant commands: &f/chase join&7, &f/chase info &7and &f/chase leave'
+  - '&7------------'
+- match: /help Raid
+  forward: /help TreasureChase
+- match: /help MonsterHunt
+  message:
+  - ''
+  - '&7-- &fHelp: Monster Hunt &7------'
+  - '&7Monster Hunt is sponsored monster slaying contest with prizes for everyone.'
+  - ''
+  - '&7When Monster Hunt begins at dusk, players run out into the darkness and start the carnage. Every monster gives certain number of points which are added up and reflected in leaderboard on the side of the screen.'
+  - ''
+  - '&7More: &fhttp://www.core-network.us/flatcore/monster-hunt'
+  - ''
+  - '&6You can purchase Monster Hunt passes in our store:'
+  - '&ehttp://store.core-network.us'
+  - ''
+  - '&7Sponsor commands: &f/hunt run &7and &f/hunt check'
+  - '&7Participant commands: &f/hunt join&7, &f/hunt info &7and &f/hunt leave'
+  - '&7Other commands: &f/hunt reward&7, &f/hunt score top'
+  - '&7------------'
+- match: /help Hunt
+  forward: /help MonsterHunt
+- match: /raid\s?(.*)
+  message:
+  - '&6Treasure Raid is now &eTreasure Chase &6/help TreasureChase'
+- match: /help Ranks
+  message:
+  - ''
+  - '&7-- &fHelp: Ranks on the Server &7----'
+  - '&7You can rank up by doing challenges. &f/help Challenges'
+  - '&7There are 7 main ranks (identified by a colored name), every with 3 mid-ranks (+, ++ or +++ on the right side). Ranks are a way to get more claim blocks (and a bigger claim area limit) and earn respect. To check your points, type &f/points'
+  - ''
+  - '&7Novice: Starting rank.'
+  - '&2Flatcorian: 1 point &7(&2+:3 &2++:7 &2+++:12&7)'
+  - '&7   - Bonus claim blocks: 1,000 &8+:&7200 &8++:&7200 &8+++:&7300.'
+  - '&aNomad: 18 points &7(&a+:25 &a++:33 &a+++:42&7)'
+  - '&7   - Bonus claim blocks: 700 &8+:&7400 &8++:&7500 &8+++:&7600.'
+  - '&3Raider: 52 points &7(&3+:63 &3++:75 &3+++:88&7)'
+  - '&7   - Bonus claim blocks: 1,000 &8+:&7500 &8++:&7600 &8+++:&7700.'
+  - '&7   - Ender Chest: 36 slots'
+  - '&eMercenary: 102 points &7(&e+:117 &e++:133 &e+++:150&7)'
+  - '&7   - Bonus claim blocks: 1,500 &8+:&7600 &8++:&7700 &8+++:&7800.'
+  - '&7   - Ender Chest: 45 slots'
+  - '&6Merchant: 168 points &7(&6+:187 &6++:207 &6+++:228&7)'
+  - '&7   - Bonus claim blocks: 2,000 &8+:&7700 &8++:&7800 &8+++:&7900.'
+  - '&7   - Ender Chest: 54 slots'
+  - '&cScribe: 250 points &7(&c+:273 &c++:297 &c+++:322&7)'
+  - '&7   - Bonus claim blocks: 3,000 &8+:&7800 &8++:&7900 &8+++:&71,000.'
+  - '&dSavant: 348 points &7(&d+:375 &d++:403 &d+++:432&7)'
+  - '&7   - Bonus claim blocks: 3,500 &8+:&7900 &8++:&71,100 &8+++:&71,100.'
+  - '&f??&7?&8??&7?&f?&8?&7?&f?&8: [inaudible]'
+  - '&7   - Bonus claim blocks: 8,000.'
+  - ''
+  - '&bGuardian &8-&7 Moderator, playing legitimate survival.'
+  - '&bGuardian&c* &8-&7 Moderator on duty, helping players.'
+  - '&7------------'
+- match: /ranks
+  forward: /help Ranks
+- match: /help Respawn
+  message:
+  - ''
+  - '&7-- &fHelp: Random Respawn &7--------'
+  - '&7When you start on the server or respawn after serving your Limbo sentence, you are taken to a random place on the map. You also get 2 minutes of mobs ignoring you. Beds can skip the night but cannot set your home / spawn point.'
+  - ''
+  - '&7If you have a base, there is a &f33% &7chance for a &fLucky Respawn &7in a 4,000 by 4,000 square centered on your biggest claim. &6You can increase that chance to &e100% &6for everyone for 12h by running a Lucky Respawn booster: &estore.core-network.us'
+  - '&7'
+  - '&7To run a booster, &f/luckyrun&7. To disable your next lucky respawn, &f/luckytoggle&7. Type again to reverse.'
+  - '&7------------'
+- match: /luckyrun
+  route: /core runlucky
+- match: /luckytoggle
+  route: /togglespawn
+- match: /help Spawning
+  message:
+  - ''
+  - '&7-- &fHelp: Mob Spawning &7--------'
+  - '&7Mob spawning is somewhat adjusted to not lag the server. Animals spawn in a slow continuous loop around the map to make sure new players can find and claim them. Yes, horses too no more than 1 per "pack" making them rare). Villagers, Golems and Squid spawn completely normally. All mobs must obey &f/limits&7.'
+  - ''
+  - '&7Monster spawning &7mechanics are completely changed.'
+  - '&f1. &fHorizontally&7, monsters spawn between 25 and 72 blocks away from you. Monsters further than that will despawn really quickly. If you are moving, mobs behind you will despawn quicker than those you are currently facing.'
+  - '&f2. &fVertically&7, monsters spawn in a designated range, of which you are the center. In overworld it''s &f32 &7blocks up and 32 down from you, in Nether only &f16&7. Think of it like a layer cake. If you want to maximize your grinder''s output, make sure it can fit inside that layer. Remember, you are the vertical center of the spawn layer.'
+  - '&f3. &7Flying mobs (Ghasts) have additional 32 blocks when it comes to vertical range (16 + 32 = &f48&7).'
+  - '&f4. &7There is a &fmaximum cap for monsters &7in each world, based on number of loaded chunks in that world (somewhat related to number of players online with exception of community towns). If that cap is reached, monsters won''t spawn unless someone frees up some slots (killing, waiting for them to burn, etc).'
+  - '&7------------'
+- match: /help Spells
+  message:
+  - ''
+  - '&7-- &fHelp: Spells &7--------'
+  - '&7Spells are custom items designed to remove the grinding aspect from some common tasks. They can disenchant an item, remove a slime chunk or instantly grow all saplings around you. When cast, they also create a positive effect boost for every player on the server in that moment.'
+  - ''
+  - '&6The way to get spells is to find them in &eTreasure Chase. &6You can buy one in &estore.core-network.us &6or wait for someone to sponsor it. /help TreasureChase'
+  - ''
+  - '&7Full documentation: &fhttp://www.core-network.us/spells'
+  - '&7------------'
+- match: /help Subscribe
+  message:
+  - ''
+  - '&6-- &eHelp: Subscribe &6--------'
+  - '&6The team behind Flatcore puts a lot of energy and time to make the server stable, fast and rich in features. We love it and we hope you love it as well.'
+  - ''
+  - '&6What is problematic for us is keeping up with the cost - hosting the server and adding custom features. If you can afford it, please check this page and decide if subscribing is something you would like to do.'
+  - '&e»» http://www.core-network.us/subscribe ««'
+  - ''
+  - '&6We keep all subscriber perks balanced or cosmetic. You can learn about them by clicking the link above. &eWe truly need you help to keep running Flatcore. &6Thank you!'
+  - ''
+  - '&7More: /help Respawn and /help TreasureChase'
+  - '&7------------'
+- match: /subscribe
+  forward: /help Subscribe
+- match: /help StretchGoal
+  message:
+  - ''
+  - '&7-- &fHelp: Stretch Goal &7--------'
+  - '&7Stretch Goal is a group effort to unlock an extra challenge for the following week. Every week we measure community''s involvement in level 3 entries and if it''s high enough we add another level next week.'
+  - ''
+  - '&7The number may change each week as it''s based on the percentrage of challenge entries from the previous week. To see what the current goal is, check this week''s challenge post on &fhttp://reddit.com/r/corenet'
+  - ''
+  - '&7To check the progress of the week, type &f/ch goal &7in chat.'
+  - '&7------------'
+- match: /help Dehydration
+  message:
+  - ''
+  - '&7-- &fHelp: Dehydration &7--------'
+  - '&7When visiting the lava cavern part of the underground Nether, you will slowly lose hydration. When you become dehydrated, you will start experiencing negative effects (debuffs). To combat dehydration, you need to drink. Items you can drink:'
+  - ''
+  - '&fWater Bottle&7, +20 hydration, +15 saturation'
+  - '&fMilk Bucket&7, +20 hydration, 0 saturation'
+  - '&fFire Resistance Potion (3:00)&7, +40 hydration, +35 saturation'
+  - '&fFire Resistance Potion (8:00)&7, +50 hydration, +45 saturation'
+  - '&fAny other potion&7, +5 hydration, +1 saturation'
+  - ''
+  - '&7Saturation is used up first (works like hunger). You become dehydrated quicker, the lower you go. Being in lava or on fire rapidly drains hydration. Being in overworld will restore your hydration slowly.'
+  - ''
+  - '&fWhen your hydration hits 0&7, you will get &fHunger I&7 and depending on your depth, varying levels of &fMining Fatigue and Slowness &7(48 to 32: level 1, 32 to 16: level 2, 16 to 0: level 3). Those effects will last for &f3 minutes &7and increase their level by 1 for another 3 minutes (Hunger will always be level 1) if you''re still dehydrated. Max debuff level is 5 (you cannot mine blocks with Mining Fatigue 5). To get rid of effects completely you need to get back to the surface and wait until they run out or drink so that your hydration is equal to Effect''s Level * 20.'
+  - '&7------------'
+- match: /help Hydration
+  forward: /help Dehydration
+- match: /help Trades
+  message:
+  - ''
+  - '&7-- &fHelp: Trades &7--------'
+  - '&7Minecraft 1.8 deeply altered trading and restocking locked deals. Trades are now categorized in tiers, where by default only tier one is unlocked. Every tier is the same for every profession. To unlock more tiers you have to use a brand new trade (100% chance) or one of the ones already used (20% chance). Restocking follows the same logic and percentages.'
+  - ''
+  - '&7To learn what kind of trades are available, visit this URL:'
+  - '&fhttp://www.core-network.us/flatcore/trading'
+  - '&7------------'
+- match: /help\s?.+
+  forward: /help
+  comment: 'This thing has to be below all help entries!'
+- match: /faq camera
+  message:
+  - '&7----------------'
+  - '&7To change your camera perspective, press &fF5&7. Pressing it will cycle your view: third person view from behind, third person view from the front and back to first person view. If you''re on &fMac&7, you probably need to press &fFn + F5&7 for the key to work unless you changed it in system preferences.'
+  - ''
+- match: /faq chunks?
+  message:
+  - '&7----------------'
+  - '&7Chunks are 16 by 16 areas which make a Minecraft world. To see chunk''s boundaries, &fpress F3 &7and look at &fChunk: x y z&7. Only x and z are of importance, 0 being first block of the chunk, 15 being last.'
+  - ''
+- match: /faq coord(inate)?s
+  message:
+  - '&7----------------'
+  - '&7Press F3 and look in top left corner. Your coordinates are after &fXYZ:&7 - first and last number of those three.'
+  - ''
+- match: /faq death ?pit
+  message:
+  - '&7----------------'
+  - '&7Death Pit is a Limbo challenge which you can use to escape before 1h is up. To do that, kill monsters and earn 20 levels of experience. Then go through the creeper maze, stone brick maze, creeper bombing alley, to the red flag tower. Watch the video if you have trouble figuring it out:'
+  - '&fhttps://v.usetapes.com/aGZB4xdlVJ'
+  - ''
+- match: /faq food|hunger
+  message:
+  - '&7----------------'
+  - '&7Hunger in Minecraft isn''t just what you see on the screen. There is a second hidden bar which is used up before the visible one: saturation. You increase saturation with food like steak or cooked pork. Eating cookies or carrots changes it very little – that''s why you have to eat them more often.'
+  - ''
+- match: /faq ladders?
+  message:
+  - '&7----------------'
+  - '&7While mobs do not actively look for ladders to climb, they can use them if they are trying to walk forward and are pushed into a ladder. This is rather common for slimes (as they hop) but can also occur when mobs are knocked (skeleton shooting a creeper, iron golem punching a zombie) or when they occasionally jump up (zombie emerging from water). Basically, whenever a mob walks into a ladder block, it will start going up - it doesn''t mean it is consciously using the ladder.'
+  - ''
+- match: /faq flowers?
+  message:
+  - '&7----------------'
+  - '&7Flowers can be created with bonemeal. To make tulips you need to find a specific place they can grow in. The world is divided in mulitple patches which allow tulips to sprout, if a flower is forced to spawn there with bonemeal (this doesn''t mean they will only appear, sometimes tall grass will form).'
+  - '&fExplained visually: http://imgur.com/a/QVNaB'
+  - ''
+- match: /faq farm(ing)?
+  message:
+  - '&7----------------'
+  - '&7Farming is relatively simple but you can do more to make it more efficient and way much faster. Watch the following video to learn how growth rates work and how bonus growth multipliers are applied.'
+  - '&fVideo: https://www.youtube.com/watch?v=4qC6-1VuDng'
+  - ''
+- match: /faq iron ?farm(ing)?
+  message:
+  - '&7----------------'
+  - '&7Nim''s design is the simplest one and requires the least amount of resources:'
+  - '&fVideo: https://www.youtube.com/watch?v=Dev3Ls8papM'
+  - '&7Docm77''s design is probably the most widely used and very reliable to use on an server.'
+  - '&fVideo: https://www.youtube.com/watch?v=xE04Ui90sQY&t=5m20s'
+  - '&7inasm''s design is also very reliable and easy to make.'
+  - '&fLink: http://redd.it/2yq2h7 &7(comments & video)'
+  - ''
+- match: /faq mumble
+  message:
+  - '&7----------------'
+  - '&7Guide: https://flatcore.hackpad.com/vmrQcCDyRmF'
+  - '&7Mumble address, default port:'
+  - '&fcore-network.us'
+  - ''
+- match: /faq refraction
+  message:
+  - '&7----------------'
+  - '&7Light refraction explained visually:'
+  - '&fhttp://i.imgur.com/wALKUwo.png'
+  - ''
+- match: /faq schematica
+  message:
+  - '&7----------------'
+  - '&cAuto-placing with Schematica is not allowed.'
+  - '&7You can use it to preview your schematics and build manually. Auto-build is not allowed because it allows players to place blocks without using any other block to place against. This is not what the server expects from your client data being sent (/help Mods), therefore is not allowed.'
+  - ''
+- match: /faq squid
+  message:
+  - '&7----------------'
+  - '&7Squid spawn in any water block between levels 46 and 62 (inclusive). You need at least two water blocks vertically (source or flowing). Squid spawning is vanilla; the more water you have the more squid you will get.'
+  - ''
+- match: /faq villages?
+  message:
+  - '&7----------------'
+  - '&7To understand valid houses in villages, villager mating and iron golem spawning, read this complete guide: &fhttp://bit.ly/OFRRbZ'
+  - '&7There is no easy way to explain the subject, so don''t ask unless you read it.'
+  - ''
+- match: /faq fish(ing)?
+  message:
+  - '&7----------------'
+  - '&7The easiest way to fish: &fhttps://vimeo.com/68224125'
+  - '&7Image album: &fhttp://imgur.com/a/V308o'
+  - ''
+- match: /faq trees?
+  message:
+  - '&7----------------'
+  - '&7To make a tree farm, put a slab/fence:'
+  - '&71. 7 blocks of air above sapling to prevent a tree from growing with any branches.'
+  - '&72. 8 blocks of air above sapling to get the most saplings, with occasional 1 sideways log as branch.'
+  - ''
+- match: /faq mushrooms?
+  message:
+  - '&7----------------'
+  - '&7To successfully plant a mushroom in overworld, you need to lower skylight to 12 or below. You also need appropriate space for the mushroom to grow when bonemealed:'
+  - '&fminecraftwiki.net/wiki/Tutorials/Mushroom_farming'
+  - ''
+- match: /faq snow(ing)?
+  message:
+  - '&7----------------'
+  - '&7It never rains on the server (/faq rain) but even if it did, you wouldn''t be able to get snow because of the biome we''re in. We would need to use Extreme Hills to be able to use this mechanic.'
+  - ''
+- match: /faq rain(ing)?
+  message:
+  - '&7----------------'
+  - '&7Rain is disabled on the server to not lag players who might be using low performance computers. Superflat is friendly to people''s machines because it has very few blocks to process and render. We might add limited rain in the future in a smart way.'
+  - ''
+- match: /faq
+  message:
+  - '&7----------------'
+  - '&7Available topics via &f/faq <topic>'
+  - '&bCamera&7, &bChunk&7, &bCoords&7, &bDeathPit&7, &bFarming&7, &bFishing&7, &bFlowers&7, &bHunger&7, &bIronFarming&7, &bLadders&7, &bMushrooms&7, &bRain&7, &bRefraction&7, &bSchematica&7, &bSlimes&7, &bSnow&7, &bSquid&7, &bTrees&7, &bVillages&7'
+  - ''
+- match: /faq\s?.+
+  forward: /faq
+  comment: 'This thing has to be below all faq entries!'
+- match: /ch goal
+  sudo: true
+  message: '&6Learn more: &7/help StretchGoal'
+  route: /chm all 4
+- match: /buyclaimblocks
+  route: /blocks buy
+- match: /head\s?(.*)
+  route: /perks skull $1
+- match: /cake
+  message: '&cTold you to not run unknown commands from strangers'
+  sudo: true
+  route: /core effect nausea 1m silent
+- match: /pumpkin
+  route: /pumpkin
+  message: '&6More info: &7http://redd.it/30yfd7'
+- match: /pumpkins
+  forward: /pumpkin

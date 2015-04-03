@@ -1,0 +1,77 @@
+Enabled: false
+TeleportY: 4
+Border:
+  NoBase:
+    MinX: -5000
+    MinZ: -5000
+    MaxX: 5000
+    MaxZ: 5000
+  Base:
+    MinX: -7950
+    MinZ: -7950
+    MaxX: 7950
+    MaxZ: 7950
+SpawnProtectionLengthFirst: 300
+SpawnProtectionLength: 120
+SpawnProtectionNotifications:
+- 240
+- 180
+- 120
+- 90
+- 60
+- 30
+- 20
+- 10
+MobRemovalRadiusSquared: 625
+SpawnWarps:
+  NewPlayer: end-spawn
+  ExistingPlayer: end-respawn
+Messages:
+  SpawnIgnored: '&aIgnoring your biggest claim on next respawn.'
+  SpawnUnignored: '&aYour biggest claim is now respected when spawning.'
+  SpawnProtectionStart: '&6Monsters will ignore you for <Time>s'
+  SpawnProtectionNotification: '&6Monsters will stop ignoring you in <Time>s.'
+  SpawnProtectionEndClaims: '&aMonsters stopped ignoring you! Find food and weapons
+    before trying to reach your &6/claims'
+  SpawnProtectionEndNoClaims: '&aMonsters stopped ignoring you! Find a village and
+    food.'
+  UnprotectNotProtected: '&cYou are already not protected.'
+  SpawnProtectionDontAbuse: '&cUse &7/unprotect &cto disable invincibility to kill
+    mobs.'
+  GroupJoin: '&bWait for everyone else to join the list and click the crystal.'
+  GroupRemain: '&3Team respawn timed out. Try again or spawn on your own.'
+  LuckyBoosterBought: '&6Bought a Lucky Respawn booster! Enable with &7/luckyrun'
+  NoLuckyBooster: '&6No boosters left! Get more: store.core-network.us'
+  ActivatedLuckyBooster: '&aLucky Respawn activated for 12 more hours'
+  ActivatedLuckyBoosterBroadcast: '&b<Player> sponsored Lucky Respawn for everyone!
+    [NEWLINE] &3It will stay active for 12 more hours. /help Respawn'
+  TimeSyntax: <Hours>h <Minutes>m
+  SpawnLuckyWithBooster: '&bOooh, lucky! [NEWLINE] &bYou had a lucky respawn thanks
+    to <Player>''s patronage. [NEWLINE] &3Booster will end in <Time>. /help Respawn'
+  SpawnLucky: '&bOooh, lucky! You had a lucky respawn! &3/help Respawn'
+  LuckyAlreadyActive: Another lucky booster is already active! It has been sponsored by <Player>. <Time> left.
+World: world
+Group:
+  TimeLimit: 30
+  Header: '&bTeam respawn'
+  NameColor: '&f'
+  CounterColor: '&f'
+LuckySquareLength: 4000
+LuckyBoosterMinutes: 720
+Lucky100: []
+Lucky66: []
+Holograms18:
+  Lists:
+  - respawn-list
+  - spawn-list
+  Counters:
+  - respawn-counter
+  - spawn-counter
+Holograms:
+  Lists:
+  - world_the_end;-2010.5;65;-4005.5;0;0
+  - world_the_end;-2017.5;93;-1106.5;0;0
+  Counters:
+  - world_the_end;-2010.5;65.3;-4005.5;0;0
+  - world_the_end;-2017.5;93.3;-1106.5;0;0
+ProtectionAbuseDelaySeconds: 5

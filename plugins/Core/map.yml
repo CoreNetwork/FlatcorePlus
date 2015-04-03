@@ -1,0 +1,161 @@
+Enabled: true
+TeleportDelay: 3
+Clicks:
+- regions:
+  - end-spawn-crystal
+  block:
+  - emerald_block
+  commands:
+  - /dm <Player> &aMobs will ignore you for a while. [NEWLINE] &aFind a village for the best chance of survival!
+  - /core spawn <Player>
+  - /checkpoint clear
+  - /core clear silent
+  - /core effect clear silent
+  - /ungod <Player> silent
+- regions:
+  - end-respawn-crystal
+  block:
+  - emerald_block
+  commands:
+  - /dm <Player> &aMobs will ignore you for a while. &aDon't make the same mistake twice, find a village first, then try to find your &6/claims.
+  - /core spawn <Player>
+  - /checkpoint clear
+  - /core clear silent
+  - /core effect clear silent
+  - /ungod <Player> silent
+- regions:
+  - limbo-parkour-crystal
+  block: diamond_block
+  commands:
+  - /lim finish <Player> parkour
+- regions:
+  - limbo-death-pit-crystal
+  block: diamond_block
+  commands:
+  - /lim finish <Player> deathpit
+- regions:
+  - end-spawn-crystal
+  - end-respawn-crystal
+  block: emerald_ore
+  commands:
+  - /rspawnteam
+- regions:
+  - limbo-tutorial-end
+  block: emerald_block
+  commands:
+  - /lim tutorial <Player> complete silent
+  - /sudo <Player> warp limbo-library-start silent
+Messages:
+  PointCreated: '&aCheckpoint <List> #<Position> created.'
+  ListNotExist: '&cCheckpoint list "<List>" does not exist.'
+  ListDeleted: '&aCheckpoint list "<List>" deleted.'
+  CheckpointNotExist: '&cCheckpoint <List> #<Position> doesn''t exist.'
+  CheckpointMoved: '&aCheckpoint <List> #<Position> moved to your location.'
+  CheckpointSaved: '&aCheckpoint <List> #<Position> saved!'
+  CheckpointNoBackwards: '&cCannot save checkpoint as it would overwrite your more
+    recent one.'
+  NothingSaved: '&cSave your checkpoint first before using it.'
+  TeleportScheduled: '&bReturning to checkpoint in 3 seconds. Stand still until then.'
+  TeleportCancelled: '&cWarmup sequence aborted! Try again and stand still.'
+  TeleportInstant: '&aReturned you to Checkpoint #<Position>'
+checkpoints:
+  deathpit:
+  - world_the_end;-1568.5111433090644;94.00871711691912;-1494.5552057476805;25.041485;-91.00571
+  parkour:
+  - world_the_end;491.5293959427166;101.0;465.3269684161528;2.2361474;0.88578767
+  - world_the_end;509.4009306385874;110.0;470.31318225199885;7.153;-178.77563
+  - world_the_end;485.3483964408762;106.0;495.45841115615764;1.626895;-269.6289
+  - world_the_end;471.2404146838484;108.0;500.4131993541956;0.32158783;-89.85602
+  - world_the_end;483.55599477227753;103.0;500.62349950930627;0.40861136;-359.6313
+  - world_the_end;500.64892761750883;116.0;517.4912319290554;0.49561557;-89.93823
+  - world_the_end;502.33655429103703;123.0;487.41428398049624;-1.2883929;-178.66089
+  - world_the_end;489.5681589616968;123.0;498.5384531126168;0.32154256;-180.3999
+  - world_the_end;494.3286136073184;124.0;517.5689655829278;0.19105032;-90.607056
+  - world_the_end;512.4111265531881;140.0;500.451375121179;1.8445469;-90.15454
+  - world_the_end;487.4146346460459;140.0;500.54881401390736;0.19109142;-270.0147
+CommandDescriptions:
+  help: '&a/chp help &8-&f List all possible commands'
+  deletelist: '&a/chp deletelist &8-&f Delete list of checkpoints'
+  create: '&a/chp create &8-&f Create checkpoint'
+  move: '&a/chp move &8-&f Move checkpoint to your position'
+OrbClearBoxSize: 10
+OrbClearInterval: 60
+Clock:
+  HoloList:
+  - clock-spawn
+  - clock-respawn
+  TimeRanges:
+  - beginning: 0
+    end: 1000
+    message: '&eSunrise (6:30 AM)'
+  - beginning: 1001
+    end: 2000
+    message: '&eSunrise (7:30 AM)'
+  - beginning: 2001
+    end: 3000
+    message: '&eDay (8:30 AM)'
+  - beginning: 3001
+    end: 4000
+    message: '&eDay (9:30 AM)'
+  - beginning: 4001
+    end: 5000
+    message: '&eDay (10:30 AM)'
+  - beginning: 5001
+    end: 6000
+    message: '&eAlmost Noon (11:30 AM)'
+  - beginning: 6001
+    end: 7000
+    message: '&eNoon (12:30 PM)'
+  - beginning: 7001
+    end: 8000
+    message: '&eAfternoon (1:30 PM)'
+  - beginning: 8001
+    end: 9000
+    message: '&eAfternoon (2:30 PM)'
+  - beginning: 9001
+    end: 10000
+    message: '&eAfternoon (3:30 PM)'
+  - beginning: 10001
+    end: 11000
+    message: '&eAfternoon (4:30 PM)'
+  - beginning: 11001
+    end: 12000
+    message: '&eAfternoon (5:30 PM)'
+  - beginning: 12001
+    end: 13000
+    message: '&eLate Afternoon (6:30 PM)'
+  - beginning: 13001
+    end: 14000
+    message: '&6Sunset (7:30 PM)'
+  - beginning: 14001
+    end: 15000
+    message: '&6Sunset (8:30 PM)'
+  - beginning: 15001
+    end: 16000
+    message: '&9Night (9:30 PM)'
+  - beginning: 16001
+    end: 17000
+    message: '&9Night (10:30 PM)'
+  - beginning: 17001
+    end: 18000
+    message: '&9Almost Midnight (11:30 PM)'
+  - beginning: 18001
+    end: 19000
+    message: '&9Midnight (0:30 AM)'
+  - beginning: 19001
+    end: 20000
+    message: '&9Night (1:30 AM)'
+  - beginning: 20001
+    end: 21000
+    message: '&9Night (2:30 AM)'
+  - beginning: 21001
+    end: 22000
+    message: '&9Night (3:30 AM)'
+  - beginning: 22001
+    end: 23000
+    message: '&9Night (4:30 AM)'
+  - beginning: 23001
+    end: 24000
+    message: '&9Night (5:30 AM)'
+  UpdateFrequency: 200
+  Enabled: false
