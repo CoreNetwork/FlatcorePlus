@@ -109,7 +109,7 @@ RiverCustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0
 StoneBlock: 172
 
 # Surface block, usually GRASS. Doesn't support block data.
-SurfaceBlock: GRASS
+SurfaceBlock: SAND
 
 # Block from stone to surface, like dirt in most biomes. Doesn't support block data.
 GroundBlock: 172
@@ -127,13 +127,13 @@ GroundBlock: 172
 
 # Alternatively, you can use Mesa, MesaForest or MesaBryce to get blocks
 # like the blocks found in the Mesa biomes.
-SurfaceAndGroundControl:
+SurfaceAndGroundControl: SAND:1,SAND:1,7.0
 
 # Replace Variable: (blockFrom,blockTo[:blockDataTo][,minHeight,maxHeight])
 # Example :
 #   ReplacedBlocks: (GRASS,DIRT,100,127),(GRASS,GLASS)
 # Replace grass block to dirt from 100 to 127 height and replace GRASS to glass on all height 
-ReplacedBlocks: (GRASS,SAND:1)
+ReplacedBlocks:
 
 #################
 # Water and ice #
@@ -254,11 +254,9 @@ FoliageColorIsMultiplier: true
 SmallLake(WATER,4,7.0,8,120)
 SmallLake(LAVA,2,1.0,8,120)
 UnderGroundLake(25,60,2,5.0,0,50)
-
-
 CustomObject(UseWorld)
-Grass(DeadBush,NotGrouped,7,100.0,GRASS)
-Plant(PUMPKIN,1,3.0,0,128,GRASS)
+Grass(DeadBush,NotGrouped,7,100.0,SAND
+Plant(PUMPKIN,1,3.0,0,128,SAND)
 Cactus(CACTUS,10,100.0,0,128,SAND)
 
 #######################################################################
