@@ -304,7 +304,6 @@ FoliageColorIsMultiplier: true
 
 SmallLake(LAVA,2,1.0,8,120)
 UnderGroundLake(25,60,2,5.0,0,50)
-
 Ore(DIRT,33,10,100.0,0,256,STONE)
 Ore(GRAVEL,33,8,100.0,0,256,STONE)
 Ore(STONE:1,33,10,100.0,0,80,STONE)
@@ -325,7 +324,6 @@ Grass(DeadBush,NotGrouped,4,100.0,SAND,HARD_CLAY,STAINED_CLAY,DIRT)
 Plant(PUMPKIN,1,3.0,0,128,GRASS)
 Reed(SUGAR_CANE_BLOCK,50,100.0,0,128,GRASS,DIRT,SAND)
 Cactus(CACTUS,10,100.0,0,128,SAND)
-
 Well(SANDSTONE,STEP:1,WATER,1,0.1,2,128,SAND)
 
 #######################################################################
