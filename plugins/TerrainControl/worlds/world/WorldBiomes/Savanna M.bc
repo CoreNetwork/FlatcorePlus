@@ -9,13 +9,13 @@
 # This should be the value of the biomeConfig you wish to extend.
 # The extended config will be loaded, at which point the configs included below
 # will overwrite any configs loaded from the extended config.
-BiomeExtends: 
+BiomeExtends: Plains 
 
 # When set to true, all resources of the parent biome (if any) will be copied
 # to the resources queue of this biome. If a resource in the parent biome looks
 # very similar to that of a child biome (for example, two ores of the same type)
 # it won't be copied.
-ResourceInheritance: true
+ResourceInheritance: false
 
 
 #######################################################################
@@ -61,57 +61,6 @@ BiomeIsBorder:
 # Biome name list near border is not applied. 
 NotBorderNear: 
 
-
-#######################################################################
-# +-----------------------------------------------------------------+ #
-# |                  Terrain height and volatility                  | #
-# +-----------------------------------------------------------------+ #
-#######################################################################
-
-# BiomeHeight mean how much height will be added in terrain generation
-# It is double value from -10.0 to 10.0
-# Value 0.0 equivalent half of map height with all other default settings
-BiomeHeight: 0.3625
-
-# Biome volatility.
-BiomeVolatility: 1.225
-
-# Smooth radius between biomes. Must be between 0 and 32, inclusive. The resulting
-# smooth radius seems to be  (thisSmoothRadius + 1 + smoothRadiusOfBiomeOnOtherSide) * 4 .
-# So if two biomes next to each other have both a smooth radius of 2, the
-# resulting smooth area will be (2 + 1 + 2) * 4 = 20 blocks wide.
-SmoothRadius: 2
-
-# If this value is greater than 0, then it will affect how much, on average, the terrain will rise before leveling off when it begins to increase in elevation.
-# If the value is less than 0, then it will cause the terrain to either increase to a lower height before leveling out or decrease in height if the value is a large enough negative.
-MaxAverageHeight: 0.0
-
-# If this value is greater than 0, then it will affect how much, on average, the terrain (usually at the ottom of the ocean) will fall before leveling off when it begins to decrease in elevation. 
-# If the value is less than 0, then it will cause the terrain to either fall to a lesser depth before leveling out or increase in height if the value is a large enough negative.
-MaxAverageDepth: 0.0
-
-# Another type of noise. This noise is independent from biomes. The larger the values the more chaotic/volatile landscape generation becomes.
-# Setting the values to negative will have the opposite effect and make landscape generation calmer/gentler.
-Volatility1: 0.0
-
-Volatility2: 0.0
-
-# Adjust the weight of the corresponding volatility settings. This allows you to change how prevalent you want either of the volatility settings to be in the terrain.
-VolatilityWeight1: 0.5
-
-VolatilityWeight2: 0.45
-
-# Disable all noises except Volatility1 and Volatility2. Also disable default block chance from height.
-DisableBiomeHeight: false
-
-# List of custom height factor, 17 double entries, each entire control of about 7 blocks height from down. Positive entry - better chance of spawn blocks, negative - smaller
-# Values which affect your configuration may be found only experimental. That may be very big, like ~3000.0 depends from height
-# Example:
-#   CustomHeightControl:0.0,-2500.0,0.0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-# Make empty layer above bedrock layer. 
-CustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
-
-
 #######################################################################
 # +-----------------------------------------------------------------+ #
 # |                              Rivers                             | #
@@ -147,7 +96,7 @@ RiverVolatility: 0.3
 RiverWaterLevel: 63
 
 # Works the same as CustomHeightControl (scroll up), but is used where a river is generated in this biome
-RiverCustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+RiverCustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0
 
 
 #######################################################################

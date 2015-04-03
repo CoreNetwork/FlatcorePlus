@@ -93,8 +93,9 @@ Reminder:
   MaximumPending: 10
 Info:
   Simple: '&6<Player>, <World>(&7<X>, &8<Y>, &7<Z>&6) <Vehicle>'
-  Verbose: '&6<Player>, <World>(&7<X>, &8<Y>, &7<Z>&6) <Vehicle> [NEWLINE] &6<Player>''s
-    stats: &8❤&7<Health> &8☕&7<Hunger>&8/<Saturation> &8✦&7<Level> &8°&7<Air>'
+  Verbose: "&6<Player>, <World>(&7<X>, &8<Y>, &7<Z>&6) <Vehicle> [NEWLINE] &6<Player>'s\
+    \ stats: &8\xe2\ufffd\xa4&7<Health> &8\xe2\u02dc\u2022&7<Hunger>&8/<Saturation>\
+    \ &8\xe2\u0153\xa6&7<Level> &8\xc2\xb0&7<Air>"
   Commands:
   - original <Player>
   - seen <Player>

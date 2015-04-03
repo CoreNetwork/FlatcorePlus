@@ -1,0 +1,1 @@
+java -Xmx2048M -Xms2048M -XX:MaxPermSize=256M -jar spigot-1.8-dev.jar
