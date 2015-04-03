@@ -1,7 +1,7 @@
-world
-world_nether
-world_the_end
-logs
+/world
+/world_nether
+/world_the_end
+/logs
 plugins/GroupManager/backup
 plugins/WorldEdit/nmsblocks
 plugins/WorldGuard/cache
