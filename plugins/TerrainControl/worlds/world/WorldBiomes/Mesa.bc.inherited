@@ -157,7 +157,7 @@ RiverCustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0
 #######################################################################
 
 # Change this to generate something else than stone in the biome. Doesn't support block data.
-StoneBlock: DIRT
+StoneBlock: SAND
 
 # Surface block, usually GRASS. Doesn't support block data.
 SurfaceBlock: SAND
@@ -184,7 +184,7 @@ SurfaceAndGroundControl: Mesa
 # Example :
 #   ReplacedBlocks: (GRASS,DIRT,100,127),(GRAVEL,GLASS)
 # Replace grass block to dirt from 100 to 127 height and replace gravel to glass on all height 
-ReplacedBlocks: None
+ReplacedBlocks: (SAND,SAND:1)
 
 #################
 # Water and ice #
