@@ -106,34 +106,34 @@ RiverCustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0
 #######################################################################
 
 # Change this to generate something else than stone in the biome. Doesn't support block data.
-StoneBlock: SAND
+StoneBlock: 172
 
 # Surface block, usually GRASS. Doesn't support block data.
-SurfaceBlock: SAND
+SurfaceBlock: GRASS
 
 # Block from stone to surface, like dirt in most biomes. Doesn't support block data.
-GroundBlock: STAINED_CLAY
+GroundBlock: 172
 
 # Setting for biomes with more complex surface and ground blocks.
 # Each column in the world has a noise value from what appears to be -7 to 7.
 # Values near 0 are more common than values near -7 and 7. This setting is
 # used to change the surface block based on the noise value for the column.
 # Syntax: SurfaceBlockName,GroundBlockName,MaxNoise,[AnotherSurfaceBlockName,[AnotherGroundBlockName,MaxNoise[,...]]
-# Example: SurfaceAndGroundControl: STONE,STONE,-0.8,GRAVEL,STONE,0.0,DIRT,DIRT,10.0
+# Example: SurfaceAndGroundControl: STONE,STONE,-0.8,GRASS,STONE,0.0,DIRT,DIRT,10.0
 #   When the noise is below -0.8, stone is the surface and ground block, between -0.8 and 0
-#   gravel with stone just below and between 0.0 and 10.0 there's only dirt.
+#   GRASS with stone just below and between 0.0 and 10.0 there's only dirt.
 #   Because 10.0 is higher than the noise can ever get, the normal SurfaceBlock
 #   and GroundBlock will never appear in this biome.
 
 # Alternatively, you can use Mesa, MesaForest or MesaBryce to get blocks
 # like the blocks found in the Mesa biomes.
-SurfaceAndGroundControl: Mesa
+SurfaceAndGroundControl:
 
 # Replace Variable: (blockFrom,blockTo[:blockDataTo][,minHeight,maxHeight])
 # Example :
-#   ReplacedBlocks: (GRASS,DIRT,100,127),(GRAVEL,GLASS)
-# Replace grass block to dirt from 100 to 127 height and replace gravel to glass on all height 
-ReplacedBlocks: (SAND,SAND:1)
+#   ReplacedBlocks: (GRASS,DIRT,100,127),(GRASS,GLASS)
+# Replace grass block to dirt from 100 to 127 height and replace GRASS to glass on all height 
+ReplacedBlocks: (GRASS,SAND:1)
 
 #################
 # Water and ice #
@@ -257,11 +257,9 @@ UnderGroundLake(25,60,2,5.0,0,50)
 
 
 CustomObject(UseWorld)
-Grass(DeadBush,NotGrouped,7,100.0,SAND,HARD_CLAY,STAINED_CLAY,DIRT)
+Grass(DeadBush,NotGrouped,7,100.0,GRASS)
 Plant(PUMPKIN,1,3.0,0,128,GRASS)
-Reed(SUGAR_CANE_BLOCK,5,100.0,0,128,GRASS,DIRT,SAND)
 Cactus(CACTUS,10,100.0,0,128,SAND)
-
 
 #######################################################################
 # +-----------------------------------------------------------------+ #
