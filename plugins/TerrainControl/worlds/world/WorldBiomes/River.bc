@@ -251,17 +251,14 @@ FoliageColorIsMultiplier: true
 # Vein resource: not in vanilla. Starts an area where ores will spawn. Can be slow, so use a low Rarity (smaller than 1).
 # CustomStructure resource: starts a BO3 structure in the chunk.
 
-SmallLake(WATER,4,7.0,8,120)
-SmallLake(LAVA,2,1.0,8,120)
-UnderGroundLake(25,60,2,5.0,0,50)
-
-
 CustomObject(UseWorld)
 Tree(1,BigTree,1,Tree,9)
 Plant(Dandelion,2,100.0,0,128,GRASS,DIRT)
 Grass(Tallgrass,NotGrouped,10,100.0,GRASS,DIRT)
 Plant(PUMPKIN,1,3.0,0,128,GRASS)
-
+UnderWaterOre(SAND,5,1,100.0,DIRT)
+UnderWaterOre(CLAY,3,1,100.0,DIRT)
+UnderWaterOre(GRAVEL,3,1,100.0,DIRT)
 
 #######################################################################
 # +-----------------------------------------------------------------+ #
