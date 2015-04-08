@@ -127,7 +127,7 @@ GroundBlock: 172
 
 # Alternatively, you can use Mesa, MesaForest or MesaBryce to get blocks
 # like the blocks found in the Mesa biomes.
-SurfaceAndGroundControl: SAND:1,SAND:1,7.0
+SurfaceAndGroundControl: SAND:1,172,7.0
 
 # Replace Variable: (blockFrom,blockTo[:blockDataTo][,minHeight,maxHeight])
 # Example :
