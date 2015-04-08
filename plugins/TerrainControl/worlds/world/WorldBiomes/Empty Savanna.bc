@@ -1,0 +1,19 @@
+# This is the biome config file of the Empty Savanna biome, which is a custom biome.
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                        Biome Inheritance                        | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+
+BiomeExtends: Savanna
+ReplaceToBiomeName: Savanna
+
+# When set to true, all resources of the parent biome (if any) will be copied
+# to the resources queue of this biome. If a resource in the parent biome looks
+# very similar to that of a child biome (for example, two ores of the same type)
+# it won't be copied.
+ResourceInheritance: false
+
+BiomeColor: #FFFFFF
